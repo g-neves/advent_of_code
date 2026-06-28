@@ -104,6 +104,6 @@ func solveDay4Part2(input string) {
 
 func main() {
 	// input := "input_test.txt" // Expected output: 43
-	input := "input.txt"  // 1376
-	solveDay4Part2(input) // 8587
+	input := "input.txt" // 8587
+	solveDay4Part2(input)
 }
