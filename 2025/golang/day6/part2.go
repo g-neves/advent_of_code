@@ -5,16 +5,15 @@ import (
 	"fmt"
 	"os"
 	"sort"
-	"strings"
 	"strconv"
+	"strings"
 )
-
 
 // Perform the desired operation
 func performOperationStr(numbers []string, operation string) int {
 	result := 0
 	if operation == "*" {
-		result = 1 
+		result = 1
 	} else if operation == "+" {
 		result = 0
 	}
@@ -55,7 +54,7 @@ func getSpacesIndexes(lines []string) map[int]int {
 	for _, line := range lines {
 		for i := 0; i < len(line); i++ {
 			if string(line[i]) == " " {
-			spaces[i]++
+				spaces[i]++
 			}
 		}
 	}
@@ -80,7 +79,7 @@ func getCommonSpaces(spaces *map[int]int, maxSeparator, maxIdx int) []int {
 
 // Find the maximum value in the map of spaces
 // This is used so that we can find the common spaces
-// NOTE: This should be the same as the number of lines in the input, 
+// NOTE: This should be the same as the number of lines in the input,
 // because the common spaces are the spaces that are present in all lines
 func findMaxSeparator(spaces *map[int]int) int {
 	maxSeparator := 0
@@ -118,7 +117,7 @@ func constructMatrix(lines []string, commonSpaces []int) [][]string {
 	return matrix
 }
 
-// find the longest line in the input to make sure we 
+// find the longest line in the input to make sure we
 // include trailing spaces in each line to make them all the same length
 func findLongestLine(lines []string) int {
 	longestLine := 0
@@ -131,8 +130,8 @@ func findLongestLine(lines []string) int {
 }
 
 // Include trailing spaces in each line to make them all the same length
-// because sometimes the last number would be x in one line and yy in another line, 
-// and we need to make sure they are all the same length because the digits in the 
+// because sometimes the last number would be x in one line and yy in another line,
+// and we need to make sure they are all the same length because the digits in the
 // operations are aligned by their position in the line.
 func includeTrailingSpaces(lines *[]string, longestLine int) {
 	for i := 0; i < len(*lines); i++ {
