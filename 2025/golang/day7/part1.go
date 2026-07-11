@@ -8,6 +8,7 @@ import (
 
 func solveDay7Part1(input string) {
 	file, err := os.Open(input)
+
 	if err != nil {
 		panic(err)
 	}
@@ -19,6 +20,12 @@ func solveDay7Part1(input string) {
 		line := scanner.Text()
 		lines = append(lines, line)
 	}
+
+	if err := scanner.Err(); err != nil {
+		panic(err)
+	}
+
+	defer file.Close()
 
 	startingPoint := getStartingPoint(lines[0])
 	if startingPoint == -1 {
@@ -81,7 +88,7 @@ func getStartingPoint(line string) int {
 }
 
 func main() {
-	input := "input_test.txt"
+	input := "input_test.txt" // Expected output: 21
 	// input := "input.txt"
 	solveDay7Part1(input)
 }
