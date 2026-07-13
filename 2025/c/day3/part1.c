@@ -28,7 +28,7 @@ void solve_day3_part1(char *input_name) {
   while (fgets(line, 256, file)) {
 
     String_View line_sv = sv(line);
-    strip_right(&line_sv);
+    strip_right(&line_sv); // fgets returns the \n character
 
     size_t max_id = 0;
     size_t sec_max_id = 1;
